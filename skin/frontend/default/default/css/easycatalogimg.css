@@ -1,0 +1,17 @@
+.easycatalogimg .products-grid { background: 0; padding: 0; margin: 0; position: static; list-style: none; }
+.easycatalogimg .products-grid li.item { padding: 10px 1% !important; }
+.easycatalogimg .products-grid .product-image { width: auto; height: auto; text-align: center; }
+.easycatalogimg .products-grid img { width: auto; max-width: 100%; height: auto; }
+.easycatalogimg-cols-2 li.item { width: 48% !important; }
+.easycatalogimg-cols-3 li.item { width: 31.3% !important; }
+.easycatalogimg-cols-4 li.item { width: 22.5% !important; }
+.easycatalogimg-cols-5 li.item { width: 18% !important; }
+.easycatalogimg-cols-6 li.item { width: 14.6% !important; }
+
+.easycatalogimg .parent-category { margin: 0 0 8px; }
+.easycatalogimg .parent-category a { font-size: 17px; font-weight: normal; text-decoration: none; color: #000; }
+.easycatalogimg .parent-category a:hover { text-decoration: underline; }
+
+.easycatalogimg .list-subcategories { padding: 0; margin: 5px 0; list-style: none; font-size: .95em; }
+.easycatalogimg .list-subcategories li { margin: 5px 0; padding: 0 0 0 10px; line-height: 1.1em; }
+.easycatalogimg .link-more { margin: 0; padding: 0; font-weight: bold; }
