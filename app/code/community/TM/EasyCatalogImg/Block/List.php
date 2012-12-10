@@ -106,7 +106,7 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
             if (method_exists($collection, 'addParentPathFilter')) {
                 $collection->addParentPathFilter($category->getPath());
             } elseif (method_exists($collection, 'addPathsFilter')) {
-                $collection->addPathsFilter($category->getPath());
+                $collection->addPathsFilter($category->getPath() . '/');
             }
         }
 
