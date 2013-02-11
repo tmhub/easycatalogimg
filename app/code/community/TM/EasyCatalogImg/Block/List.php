@@ -132,13 +132,16 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
         $result        = array();
         $subcategories = array();
         foreach ($collection as $category) {
-            if (!isset($result[$category->getParentId()])) {
+            if ($category->getLevel() == ($currentLevel + 1)) {
                 $result[$category->getId()] = $category;
             } else {
                 $subcategories[$category->getParentId()][] = $category;
             }
         }
         foreach ($subcategories as $parentId => $_subcategories) {
+            if (!isset($result[$parentId])) { // inactive parent category
+                continue;
+            }
             $parent = $result[$parentId];
             $parent->setSubcategories($_subcategories);
         }
