@@ -1,0 +1,33 @@
+{
+    "name": "tm/tm_easycatalogimg",
+    "type": "magento-module",
+    "homepage": "http://192.168.1.12/tm/easycatalogimg",
+    "license": "OSL-3.0",
+    "description": "Templates Master easy catalog images module",
+    "authors": [
+        {
+            "name": "Template Masters Team",
+            "email": "support@templates-master.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*",
+        "tm/tm_core": "*"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://omerdev.com/packages/"
+        }
+    ],
+    "extra": {
+        "map": [
+            ["app/code/community/TM/EasyCatalogImg", "app/code/community/TM/EasyCatalogImg"],
+            ["app/design/frontend/default/default/layout/easycatalogimg.xml", "app/design/frontend/default/default/layout/easycatalogimg.xml"],
+            ["app/design/frontend/default/default/template/easycatalogimg", "app/design/frontend/default/default/template/easycatalogimg"],
+            ["app/etc/modules/TM_EasyCatalogImg.xml", "app/etc/modules/TM_EasyCatalogImg.xml"],
+            ["app/locale/en_US/TM_EasyCatalogImg.csv", "app/locale/en_US/TM_EasyCatalogImg.csv"]
+        ],
+        "changelog": ""
+    }
+}
