@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<widgets>
+    <easycatalogimg_list type="easycatalogimg/list" translate="name" module="easycatalogimg">
+        <name>Easy Catalog Images</name>
+        <is_email_compatible>1</is_email_compatible>
+        <parameters>
+            <category_count translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Number of categories to show</label>
+                <type>text</type>
+                <value>100</value>
+            </category_count>
+            <column_count translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Columns count</label>
+                <type>text</type>
+                <value>4</value>
+            </column_count>
+            <show_image translate="label">
+                <required>0</required>
+                <visible>1</visible>
+                <label>Show images</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <value>1</value>
+            </show_image>
+            <image_width translate="label">
+                <required>0</required>
+                <visible>1</visible>
+                <label>Image width</label>
+                <type>text</type>
+                <value>200</value>
+            </image_width>
+            <image_height translate="label">
+                <required>0</required>
+                <visible>1</visible>
+                <label>Image height</label>
+                <type>text</type>
+                <value>200</value>
+            </image_height>
+            <subcategory_count translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Number of subcategories to show</label>
+                <type>text</type>
+                <value>5</value>
+            </subcategory_count>
+            <!-- <category_to_show translate="label">
+                <required>0</required>
+                <visible>1</visible>
+                <label>Categories to show</label>
+                <description>Comma separated ids: 13,17</description>
+                <type>text</type>
+            </category_to_show>
+            <category_to_hide translate="label">
+                <required>0</required>
+                <visible>1</visible>
+                <label>Categories to hide</label>
+                <description>Comma separated ids: 13,17</description>
+                <type>text</type>
+            </category_to_hide> -->
+            <template translate="label" module="core">
+                <required>0</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>text</type>
+                <value>easycatalogimg/list.phtml</value>
+            </template>
+        </parameters>
+    </easycatalogimg_list>
+</widgets>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <TM_EasyCatalogImg>
+            <version>2.0.1</version>
+        </TM_EasyCatalogImg>
+    </modules>
+
+    <global>
+        <blocks>
+            <easycatalogimg>
+                <class>TM_EasyCatalogImg_Block</class>
+            </easycatalogimg>
+        </blocks>
+        <helpers>
+            <easycatalogimg>
+                <class>TM_EasyCatalogImg_Helper</class>
+            </easycatalogimg>
+        </helpers>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <easycatalogimg>
+                    <file>easycatalogimg.xml</file>
+                </easycatalogimg>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <TM_EasyCatalogImg>
+                    <files>
+                        <default>TM_EasyCatalogImg.csv</default>
+                    </files>
+                </TM_EasyCatalogImg>
+            </modules>
+        </translate>
+   </frontend>
+
+   <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <easycatalogimg translate="title" module="easycatalogimg">
+                                            <title>Easy Catalog Images</title>
+                                            <sort_order>52</sort_order>
+                                        </easycatalogimg>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+            <modules>
+                <TM_EasyCatalogImg>
+                    <files>
+                        <default>TM_EasyCatalogImg.csv</default>
+                    </files>
+                </TM_EasyCatalogImg>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <default>
+        <easycatalogimg>
+            <general>
+                <enabled>0</enabled>
+                <use_image_attribute>1</use_image_attribute>
+                <resize_image>1</resize_image>
+                <background>255,255,255</background>
+                <placeholder>easycatalogimg/no_image.gif</placeholder>
+            </general>
+            <category>
+                <enabled_for_default>1</enabled_for_default>
+                <enabled_for_anchor>1</enabled_for_anchor>
+                <category_count>100</category_count>
+                <column_count>3</column_count>
+                <show_image>1</show_image>
+                <image_width>200</image_width>
+                <image_height>200</image_height>
+                <subcategory_count>5</subcategory_count>
+            </category>
+        </easycatalogimg>
+    </default>
+</config>

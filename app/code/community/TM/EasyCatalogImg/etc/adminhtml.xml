@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <easycatalogimg translate="title" module="easycatalogimg">
+                                        <title>Easy Catalog Images</title>
+                                        <sort_order>52</sort_order>
+                                    </easycatalogimg>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
