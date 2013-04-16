@@ -178,6 +178,20 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
     }
 
     /**
+     * If retina support is enabled, that images will be resized in larger size
+     *
+     * @return boolean
+     */
+    public function getRetinaSupport()
+    {
+        $support = $this->_getData('retina_support');
+        if (null === $support) {
+            $this->setData('retina_support', Mage::getStoreConfig('easycatalogimg/general/retina_support'));
+        }
+        return (bool) $this->_getData('retina_support');
+    }
+
+    /**
      * Fix for widget instance
      *
      * @return boolean

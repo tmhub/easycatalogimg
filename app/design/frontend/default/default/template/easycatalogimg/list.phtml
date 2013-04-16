@@ -39,7 +39,13 @@ $i = 0;
                     ?>
                     <img src="<?php echo $this->getImage($_category) ?>" style="<?php echo $style ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>" />
                 <?php else: ?>
-                    <img src="<?php echo Mage::helper('easycatalogimg/image')->resize($this->getImage($_category), $width, $height) ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>" />
+                    <?php
+                        $multiplier = 1;
+                        if ($this->getRetinaSupport()) :
+                            $multiplier = 2;
+                        endif;
+                    ?>
+                    <img src="<?php echo Mage::helper('easycatalogimg/image')->resize($this->getImage($_category), $width * $multiplier, $height * $multiplier) ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>" />
                 <?php endif; ?>
             </a>
         <?php endif; ?>
