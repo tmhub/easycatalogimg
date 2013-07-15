@@ -27,7 +27,9 @@
             ["app/design/frontend/default/default/layout/easycatalogimg.xml", "app/design/frontend/default/default/layout/easycatalogimg.xml"],
             ["app/design/frontend/default/default/template/easycatalogimg", "app/design/frontend/default/default/template/easycatalogimg"],
             ["app/etc/modules/TM_EasyCatalogImg.xml", "app/etc/modules/TM_EasyCatalogImg.xml"],
-            ["app/locale/en_US/TM_EasyCatalogImg.csv", "app/locale/en_US/TM_EasyCatalogImg.csv"]
+            ["app/locale/en_US/TM_EasyCatalogImg.csv", "app/locale/en_US/TM_EasyCatalogImg.csv"],
+            ["media/catalog/category/easycatalogimg/no_image.gif", "media/catalog/category/easycatalogimg/no_image.gif"],
+            ["skin/frontend/default/default/css/easycatalogimg.css", "skin/frontend/default/default/css/easycatalogimg.css"]
         ],
         "changelog": ""
     }
