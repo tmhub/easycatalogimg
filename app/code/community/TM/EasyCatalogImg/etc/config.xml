@@ -2,7 +2,7 @@
 <config>
     <modules>
         <TM_EasyCatalogImg>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
         </TM_EasyCatalogImg>
     </modules>
 
@@ -77,6 +77,7 @@
                 <use_image_attribute>1</use_image_attribute>
                 <resize_image>1</resize_image>
                 <background>255,255,255</background>
+                <retina_support>1</retina_support>
                 <placeholder>easycatalogimg/no_image.gif</placeholder>
             </general>
             <category>
