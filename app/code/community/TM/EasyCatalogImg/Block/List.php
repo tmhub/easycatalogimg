@@ -152,13 +152,14 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
     public function getImage($category)
     {
         $url = false;
-        $prefix = Mage::getBaseUrl('media').'catalog/category/';
+        $prefix = Mage::getBaseUrl('media') . 'catalog/category/';
         if ($image = $category->getThumbnail()) {
             $url = $prefix . $image;
         } elseif ($this->getUseImageAttribute() && $image = $category->getImage()) {
             $url = $prefix . $image;
         } else {
-            $url = $prefix . Mage::getStoreConfig('easycatalogimg/general/placeholder');
+            $url = Mage::getBaseUrl('media') . '/'
+                . Mage::getStoreConfig('easycatalogimg/general/placeholder');
         }
         return $url;
     }

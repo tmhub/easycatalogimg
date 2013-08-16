@@ -66,7 +66,7 @@
                 <visible>1</visible>
                 <label>Template</label>
                 <type>text</type>
-                <value>easycatalogimg/list.phtml</value>
+                <value>tm/easycatalogimg/list.phtml</value>
             </template>
         </parameters>
     </easycatalogimg_list>

@@ -23,7 +23,7 @@
         <layout>
             <updates>
                 <easycatalogimg>
-                    <file>easycatalogimg.xml</file>
+                    <file>tm/easycatalogimg.xml</file>
                 </easycatalogimg>
             </updates>
         </layout>
@@ -77,8 +77,12 @@
                 <use_image_attribute>1</use_image_attribute>
                 <resize_image>1</resize_image>
                 <background>255,255,255</background>
+<<<<<<< HEAD
                 <retina_support>1</retina_support>
                 <placeholder>easycatalogimg/no_image.gif</placeholder>
+=======
+                <placeholder>tm/easycatalogimg/no_image.gif</placeholder>
+>>>>>>> 1805a01... default => base was moved; tm subdir was added
             </general>
             <category>
                 <enabled_for_default>1</enabled_for_default>

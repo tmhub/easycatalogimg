@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addItem" ifconfig="easycatalogimg/general/enabled">
+                <type>skin_css</type>
+                <name>css/tm/easycatalogimg.css</name>
+            </action>
+        </reference>
+    </default>
+
+    <catalog_category_default>
+        <reference name="content">
+            <block type="easycatalogimg/list" name="subcategories" before="-" template="tm/easycatalogimg/list.phtml">
+                <action method="addDataFromConfig">
+                    <path>easycatalogimg/category</path>
+                </action>
+                <action method="setDataFromConfig">
+                    <key>use_image_attribute</key>
+                    <path>easycatalogimg/general/use_image_attribute</path>
+                </action>
+                <action method="setDataFromConfig">
+                    <key>resize_image</key>
+                    <path>easycatalogimg/general/resize_image</path>
+                </action>
+
+                <!--
+                OR
+                <action method="setDataFromConfig"><key>enabled</key><path>easycatalogimg/general/enabled</path></action>
+                ...
+
+                OR
+                <action method="setEnabled"><enabled>1</enabled></action>
+                ...
+                -->
+            </block>
+        </reference>
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <reference name="content">
+            <block type="easycatalogimg/list" name="subcategories" before="-" template="tm/easycatalogimg/list.phtml">
+                <action method="addDataFromConfig">
+                    <path>easycatalogimg/category</path>
+                </action>
+                <action method="setDataFromConfig">
+                    <key>use_image_attribute</key>
+                    <path>easycatalogimg/general/use_image_attribute</path>
+                </action>
+                <action method="setDataFromConfig">
+                    <key>resize_image</key>
+                    <path>easycatalogimg/general/resize_image</path>
+                </action>
+            </block>
+        </reference>
+    </catalog_category_layered>
+</layout>
