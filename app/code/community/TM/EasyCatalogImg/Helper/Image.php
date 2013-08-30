@@ -13,10 +13,11 @@ class TM_EasyCatalogImg_Helper_Image extends Mage_Core_Helper_Abstract
 
         $imageResized = Mage::getBaseDir('media').DS."catalog".DS."category".DS."resized".DS.$imageName;
 
-        $dirImg = Mage::getBaseDir().str_replace("/",DS,strstr($imageUrl,'/media'));
+        $imagePath = str_replace(Mage::getBaseUrl('media'), 'media/', $imageUrl);
+        $imagePath = Mage::getBaseDir() . DS . str_replace("/", DS, $imagePath);
 
-        if (!file_exists($imageResized) && file_exists($dirImg)) {
-            $imageObj = new Varien_Image($dirImg);
+        if (!file_exists($imageResized) && file_exists($imagePath)) {
+            $imageObj = new Varien_Image($imagePath);
             $imageObj->constrainOnly(true);
             $imageObj->keepAspectRatio(true);
             $imageObj->keepFrame(true);
