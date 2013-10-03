@@ -1,7 +1,7 @@
 {
     "name": "tm/easycatalogimg",
     "type": "magento-module",
-    "homepage": "http://gitlab.templates-master.com/tm/easycatalogimg",
+    "homepage": "https://github.com/tmhub/easycatalogimg",
     "license": "OSL-3.0",
     "description": "Templates Master easy catalog images module",
     "version": "2.0.2",
