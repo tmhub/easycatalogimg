@@ -4,6 +4,24 @@
         <name>Easy Catalog Images</name>
         <is_email_compatible>1</is_email_compatible>
         <parameters>
+            <enabled_for_anchor>
+                <visible>0</visible>
+                <type>text</type>
+                <value>1</value>
+            </enabled_for_anchor>
+            <enabled_for_default>
+                <visible>0</visible>
+                <type>text</type>
+                <value>1</value>
+            </enabled_for_default>
+            <hide_when_filter_is_used>
+                <required>0</required>
+                <visible>1</visible>
+                <label>Hidden, when filter or pagination is used</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <value>1</value>
+            </hide_when_filter_is_used>
             <category_count translate="label">
                 <required>1</required>
                 <visible>1</visible>

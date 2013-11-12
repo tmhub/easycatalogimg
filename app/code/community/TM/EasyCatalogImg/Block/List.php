@@ -171,11 +171,7 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
      */
     public function getResizeImage()
     {
-        $resize = $this->_getData('resize_image');
-        if (null === $resize) {
-            $this->setData('resize_image', Mage::getStoreConfig('easycatalogimg/general/resize_image'));
-        }
-        return (bool) $this->_getData('resize_image');
+        return (bool) $this->_getDataFromConfigByKey('resize_image', 'general');
     }
 
     /**
@@ -185,25 +181,41 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
      */
     public function getRetinaSupport()
     {
-        $support = $this->_getData('retina_support');
-        if (null === $support) {
-            $this->setData('retina_support', Mage::getStoreConfig('easycatalogimg/general/retina_support'));
-        }
-        return (bool) $this->_getData('retina_support');
+        return (bool) $this->_getDataFromConfigByKey('retina_support', 'general');
     }
 
     /**
-     * Fix for widget instance
+     * Should we use image attribute, when thumbnail is not available
      *
      * @return boolean
      */
     public function getUseImageAttribute()
     {
-        $useImageAttr = $this->_getData('use_image_attribute');
-        if (null === $useImageAttr) {
-            $this->setData('use_image_attribute', Mage::getStoreConfig('easycatalogimg/general/use_image_attribute'));
+        return (bool) $this->_getDataFromConfigByKey('use_image_attribute', 'general');
+    }
+
+    public function getHideWhenFilterIsUsed()
+    {
+        return (bool) $this->_getDataFromConfigByKey('hide_when_filter_is_used', 'category');
+    }
+
+    public function getEnabledForAnchor()
+    {
+        return (bool) $this->_getDataFromConfigByKey('enabled_for_anchor', 'category');
+    }
+
+    public function getEnabledForDefault()
+    {
+        return (bool) $this->_getDataFromConfigByKey('enabled_for_default', 'category');
+    }
+
+    protected function _getDataFromConfigByKey($key, $configSection)
+    {
+        $data = $this->_getData($key);
+        if (null === $data) {
+            $this->setData($key, Mage::getStoreConfig("easycatalogimg/{$configSection}/{$key}"));
         }
-        return (bool) $this->_getData('use_image_attribute');
+        return $this->_getData($key);
     }
 
     /**
@@ -228,11 +240,24 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
             return '';
         }
 
+        /**
+         * don't show the block:
+         *  if pagination is used
+         *  if filter is applied
+         */
+        $page = (int) $this->getRequest()->getParam('p', 1);
+        if ($this->getHideWhenFilterIsUsed()
+            && ($page > 1
+                || Mage::getSingleton('catalog/layer')->getState()->getFilters())
+        ) {
+            return '';
+        }
+
         $category = $this->getCurrentCategory();
         if ($category && $category->getLevel() > 1) {
             $isAnchor          = $category->getIsAnchor();
-            $enabledForAnchor  = Mage::getStoreConfigFlag('easycatalogimg/category/enabled_for_anchor');
-            $enabledForDefault = Mage::getStoreConfigFlag('easycatalogimg/category/enabled_for_default');
+            $enabledForAnchor  = $this->getEnabledForAnchor();
+            $enabledForDefault = $this->getEnabledForDefault();
 
             if (($isAnchor && !$enabledForAnchor)
                 || (!$isAnchor && !$enabledForDefault)) {
