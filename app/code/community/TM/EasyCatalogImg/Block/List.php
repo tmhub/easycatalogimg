@@ -69,7 +69,9 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
             $this->getImageWidth(),
             $this->getImageHeight(),
             $this->getSubcategoryCount(),
-            $this->getUseImageAttribute()
+            $this->getUseImageAttribute(),
+            $this->getCategoryToShow(),
+            $this->getCategoryToHide()
         );
     }
 
@@ -129,9 +131,30 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
             ->load();
 
         // the next loops is working for two levels only
+        if ($categoriesToShow = $this->getCategoryToShow()) {
+            $categoriesToShow = explode(',', $categoriesToShow);
+        } else {
+            $categoriesToShow = array();
+        }
+        if ($categoriesToHide = $this->getCategoryToHide()) {
+            $categoriesToHide = explode(',', $categoriesToHide);
+        } else {
+            $categoriesToHide = array();
+        }
+
         $result        = array();
         $subcategories = array();
         foreach ($collection as $category) {
+            if (in_array($category->getId(), $categoriesToHide)) {
+                continue;
+            }
+            if ($categoriesToShow
+                && !in_array($category->getId(), $categoriesToShow)
+                && !in_array($category->getParentId(), $categoriesToShow)) {
+
+                continue;
+            }
+
             if ($category->getLevel() == ($currentLevel + 1)) {
                 $result[$category->getId()] = $category;
             } else {
@@ -223,10 +246,25 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
      */
     public function getCurrentCategory()
     {
+        if ($categoryId = $this->getCategoryId()) {
+            return Mage::getModel('catalog/category')->load($categoryId);
+        }
         if (Mage::getSingleton('catalog/layer')) {
             return Mage::getSingleton('catalog/layer')->getCurrentCategory();
         }
         return false;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCategoryId($key = 'category_id')
+    {
+        $id = $this->_getData('category_id');
+        if (null !== $id && strstr($id, 'category/')) { // category id from widget
+            $id = str_replace('category/', '', $id);
+        }
+        return $id;
     }
 
     /**
