@@ -5,10 +5,10 @@ class TM_EasyCatalogImg_Helper_Image extends Mage_Core_Helper_Abstract
     public function resize($imageUrl, $width, $height)
     {
         if (!file_exists(Mage::getBaseDir('media').DS."catalog".DS."category".DS."resized")) {
-            mkdir(Mage::getBaseDir('media').DS."catalog".DS."category".DS."resized",0777);
-        };
+            mkdir(Mage::getBaseDir('media').DS."catalog".DS."category".DS."resized", 0777, true);
+        }
 
-        $imageName = substr(strrchr($imageUrl,"/"),1);
+        $imageName = substr(strrchr($imageUrl, "/"), 1);
         $imageName = $width . '_' . $height . '_' . $imageName;
 
         $imageResized = Mage::getBaseDir('media').DS."catalog".DS."category".DS."resized".DS.$imageName;
