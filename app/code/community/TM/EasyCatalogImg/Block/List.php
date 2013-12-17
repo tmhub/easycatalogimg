@@ -258,7 +258,7 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
     /**
      * @return int
      */
-    public function getCategoryId($key = 'category_id')
+    public function getCategoryId()
     {
         $id = $this->_getData('category_id');
         if (null !== $id && strstr($id, 'category/')) { // category id from widget
