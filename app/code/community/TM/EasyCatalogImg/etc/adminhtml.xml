@@ -10,7 +10,6 @@
                                 <children>
                                     <easycatalogimg translate="title" module="easycatalogimg">
                                         <title>Easy Catalog Images</title>
-                                        <sort_order>52</sort_order>
                                     </easycatalogimg>
                                 </children>
                             </config>
