@@ -41,10 +41,11 @@
                 <type>text</type>
                 <value>5</value>
             </subcategory_count>
-            <column_count translate="label">
+            <column_count translate="label description">
                 <required>1</required>
                 <visible>1</visible>
                 <label>Columns count</label>
+                <description>2 — 6 columns</description>
                 <type>text</type>
                 <value>4</value>
             </column_count>
@@ -80,14 +81,14 @@
                     </show_image>
                 </depends>
             </image_height>
-            <category_to_show translate="label">
+            <category_to_show translate="label description">
                 <required>0</required>
                 <visible>1</visible>
                 <label>Categories to show</label>
                 <description>Comma separated ids. Example: 13,17</description>
                 <type>text</type>
             </category_to_show>
-            <category_to_hide translate="label">
+            <category_to_hide translate="label description">
                 <required>0</required>
                 <visible>1</visible>
                 <label>Categories to hide</label>
@@ -101,7 +102,7 @@
                 <type>text</type>
                 <value>tm/easycatalogimg/list.phtml</value>
             </template>
-            <hide_when_filter_is_used>
+            <hide_when_filter_is_used translate="label">
                 <required>0</required>
                 <visible>1</visible>
                 <label>Hidden, when filter or pagination is used</label>
