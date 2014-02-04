@@ -21,7 +21,7 @@ $i = 0;
     <?php if ($i >= $maxCategoryCount): break; endif; ?>
 
     <?php if($i++%$columnsCount==0): ?>
-    <ul class="products-grid category-grid easycatalogimg-cols-<?php echo $columnsCount ?>">
+    <ul class="easycatalog-grid easycatalogimg-cols-<?php echo $columnsCount ?>">
     <?php endif; ?>
 
     <li class="item">
@@ -54,7 +54,7 @@ $i = 0;
             $j = 0;
             $_subcategories = $_category->getSubcategories();
             $_count         = count($_subcategories);
-            // display More link, if more than 1 subcategories are not shown, otherwise - display last category
+            // display More link, if more than one subcategory is not shown, otherwise - display last category
             $_displayMoreLink = $_count > $maxSubcategoryCount + 1;
             if ($_count) : ?>
                 <ul class="list-subcategories">
@@ -87,4 +87,4 @@ $i = 0;
 <?php endforeach; ?>
 </div>
 
-<script type="text/javascript">decorateGeneric($$('ul.category-grid'), ['odd','even','first','last'])</script>
+<script type="text/javascript">decorateGeneric($$('ul.easycatalog-grid'), ['odd','even','first','last'])</script>
