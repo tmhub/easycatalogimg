@@ -17,6 +17,11 @@
                 <class>TM_EasyCatalogImg_Helper</class>
             </easycatalogimg>
         </helpers>
+        <models>
+            <easycatalogimg>
+                <class>TM_EasyCatalogImg_Model</class>
+            </easycatalogimg>
+        </models>
     </global>
 
     <frontend>
@@ -37,6 +42,18 @@
             </modules>
         </translate>
    </frontend>
+
+   <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <easycatalogimg before="Mage_Adminhtml">TM_EasyCatalogImg_Adminhtml</easycatalogimg>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 
    <adminhtml>
         <acl>

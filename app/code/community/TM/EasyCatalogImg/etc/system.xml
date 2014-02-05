@@ -158,6 +158,15 @@
                         </subcategory_count>
                     </fields>
                 </category>
+                <automated_image_assignment translate="label">
+                    <label>Automated Image Assignment</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>easycatalogimg/adminhtml_system_config_form_fieldset_automatedImageAssignment</frontend_model>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                </automated_image_assignment>
             </groups>
         </easycatalogimg>
     </sections>
