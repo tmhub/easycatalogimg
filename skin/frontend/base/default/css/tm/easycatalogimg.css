@@ -1,6 +1,7 @@
 .easycatalog-grid,
 .easycatalog-grid li { background: none; padding: 0; margin: 0; list-style: none; }
-.easycatalog-grid {}
+.std .easycatalog-grid,
+.std .easycatalog-grid li { padding: 0; margin: 0; list-style: none; }
 .easycatalog-grid li.item { padding: 10px 1% !important; float: left; }
 .easycatalog-grid .product-image { width: auto; height: auto; text-align: center; }
 .easycatalog-grid img { width: auto; max-width: 100%; height: auto; }
