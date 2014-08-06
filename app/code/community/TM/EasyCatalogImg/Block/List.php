@@ -71,7 +71,8 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
             $this->getSubcategoryCount(),
             $this->getUseImageAttribute(),
             $this->getCategoryToShow(),
-            $this->getCategoryToHide()
+            $this->getCategoryToHide(),
+            (int)Mage::app()->getStore()->isCurrentlySecure()
         );
     }
 
