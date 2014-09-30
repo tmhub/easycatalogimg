@@ -93,7 +93,6 @@
                 <use_image_attribute>1</use_image_attribute>
                 <resize_image>1</resize_image>
                 <background>255,255,255</background>
-                <retina_support>1</retina_support>
                 <placeholder>tm/easycatalogimg/no_image.gif</placeholder>
             </general>
             <category>

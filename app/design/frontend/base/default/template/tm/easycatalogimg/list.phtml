@@ -6,6 +6,7 @@ if (!$_collectionSize) :
     return;
 endif;
 
+$imager = Mage::helper('easycatalogimg/image');
 $columnsCount = $this->getColumnCount();
 $showImage    = $this->getShowImage();
 $height       = $this->getImageHeight();
@@ -28,6 +29,7 @@ $i = 0;
         <h5 class="category-name parent-category"><a href="<?php echo $_category->getUrl() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>"><?php echo $this->htmlEscape($_category->getName()) ?></a></h5>
         <?php if ($showImage) : ?>
             <a href="<?php echo $_category->getUrl() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>" class="product-image">
+                <?php $imageUrl = $this->getImage($_category) ?>
                 <?php if(!$resizeImage = $this->getResizeImage()): ?>
                     <?php
                         $style = '';
@@ -37,15 +39,16 @@ $i = 0;
                             $style = 'height: ' . (is_numeric($height) ? $height . 'px' : $height);
                         endif;
                     ?>
-                    <img src="<?php echo $this->getImage($_category) ?>" style="<?php echo $style ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>" />
+                    <img src="<?php echo $this->getImage($_category) ?>"
+                        style="<?php echo $style ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>"
+                    />
                 <?php else: ?>
-                    <?php
-                        $multiplier = 1;
-                        if ($this->getRetinaSupport()) :
-                            $multiplier = 2;
-                        endif;
-                    ?>
-                    <img src="<?php echo Mage::helper('easycatalogimg/image')->resize($this->getImage($_category), $width * $multiplier, $height * $multiplier) ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>" />
+                    <img src="<?php echo $imager->resize($imageUrl, $width, $height) ?>"
+                        srcset="<?php echo $imager->resize($imageUrl, $width * 2, $height * 2) ?> 2x"
+                        width="<?php echo $width ?>"
+                        height="<?php echo $height ?>"
+                        alt="<?php echo $this->htmlEscape($_category->getName()) ?>"
+                    />
                 <?php endif; ?>
             </a>
         <?php endif; ?>

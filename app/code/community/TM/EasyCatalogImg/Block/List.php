@@ -199,16 +199,6 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
     }
 
     /**
-     * If retina support is enabled, that images will be resized in larger size
-     *
-     * @return boolean
-     */
-    public function getRetinaSupport()
-    {
-        return (bool) $this->_getDataFromConfigByKey('retina_support', 'general');
-    }
-
-    /**
      * Should we use image attribute, when thumbnail is not available
      *
      * @return boolean
