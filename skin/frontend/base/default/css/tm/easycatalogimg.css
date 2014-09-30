@@ -24,6 +24,7 @@
 .nav-dropdown .easycatalog-grid { border: none; }
 .nav-dropdown .easycatalog-grid li.item { background: none !important; border: none; margin: 0; }
 .nav-dropdown .easycatalogimg .parent-category { text-align: center; }
+.nav-dropdown .easycatalogimg .product-image { display: block; }
 
 .easycatalogimg,
 .easycatalog-grid { zoom: 1; }
