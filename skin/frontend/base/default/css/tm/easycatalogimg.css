@@ -16,7 +16,7 @@
 .easycatalogimg .parent-category a:hover { text-decoration: underline; }
 
 .easycatalogimg .list-subcategories { padding: 0; margin: 5px 0; list-style: none; font-size: .95em; }
-.easycatalogimg .list-subcategories li { margin: 5px 0; padding: 0 0 0 10px; line-height: 1.1em; }
+.easycatalogimg .list-subcategories li { margin: 8px 0; padding: 0 0 0 10px; line-height: 1.1em; }
 .easycatalogimg .link-more { margin: 0; padding: 0; font-weight: bold; }
 
 /* NavigationPro integration */
