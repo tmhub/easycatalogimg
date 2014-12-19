@@ -3,8 +3,8 @@
     "type": "magento-module",
     "homepage": "https://github.com/tmhub/easycatalogimg",
     "license": "OSL-3.0",
-    "description": "Templates Master easy catalog images module",
-    "version": "2.3.1",
+    "description": "Subcategories listing with images",
+    "version": "2.3.2",
     "authors": [
         {
             "name": "Template Masters Team",
