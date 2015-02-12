@@ -27,7 +27,7 @@ class TM_EasyCatalogImg_Helper_Image extends Mage_Core_Helper_Abstract
             $imageObj->constrainOnly(true);
             $imageObj->keepAspectRatio(true);
             $imageObj->keepFrame(true);
-            // $imageObj->keepTransparency(true);
+            $imageObj->keepTransparency(true);
             $imageObj->backgroundColor($this->getBackgroundColor());
             $imageObj->resize($width, $height);
             $imageObj->save($imageResized);
