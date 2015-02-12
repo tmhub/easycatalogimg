@@ -2,6 +2,8 @@
 
 class TM_EasyCatalogImg_Helper_Image extends Mage_Core_Helper_Abstract
 {
+    protected $_backgroundColor = null;
+
     public function resize($imageUrl, $width, $height)
     {
         if (!file_exists(Mage::getBaseDir('media').DS."catalog".DS."category".DS."resized")) {
@@ -9,7 +11,11 @@ class TM_EasyCatalogImg_Helper_Image extends Mage_Core_Helper_Abstract
         }
 
         $imageName = substr(strrchr($imageUrl, "/"), 1);
-        $imageName = $width . '_' . $height . '_' . $imageName;
+        if ('255,255,255' !== $this->getBackgroundColor(true)) {
+            $imageName = $width . 'x' . $height . '/' . $this->getBackgroundColor(true) . '/' . $imageName;
+        } else {
+            $imageName = $width . 'x' . $height . '/' . $imageName;
+        }
 
         $imageResized = Mage::getBaseDir('media').DS."catalog".DS."category".DS."resized".DS.$imageName;
 
@@ -32,13 +38,28 @@ class TM_EasyCatalogImg_Helper_Image extends Mage_Core_Helper_Abstract
         return $imageUrl;
     }
 
-    public function getBackgroundColor()
+    public function setBackgroundColor($rgb)
     {
-        $rgb = Mage::getStoreConfig('easycatalogimg/general/background');
-        $rgb = explode(',', $rgb);
-        foreach ($rgb as $i => $color) {
-            $rgb[$i] = (int) $color;
+        if (!is_array($rgb)) {
+            $rgb = explode(',', $rgb);
+            foreach ($rgb as $i => $color) {
+                $rgb[$i] = (int) $color;
+            }
         }
-        return $rgb;
+        $this->_backgroundColor = $rgb;
+
+        return $this;
+    }
+
+    public function getBackgroundColor($toString = false)
+    {
+        if (null === $this->_backgroundColor) {
+            $rgb = Mage::getStoreConfig('easycatalogimg/general/background');
+            $this->setBackgroundColor($rgb);
+        }
+        if ($toString) {
+            return implode(',', $this->_backgroundColor);
+        }
+        return $this->_backgroundColor;
     }
 }

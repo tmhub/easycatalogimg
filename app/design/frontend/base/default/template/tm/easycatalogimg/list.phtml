@@ -7,6 +7,10 @@ if (!$_collectionSize) :
 endif;
 
 $imager = Mage::helper('easycatalogimg/image');
+if ($background = $this->getBackgroundColor()) :
+    $imager->setBackgroundColor($background);
+endif;
+
 $columnsCount = $this->getColumnCount();
 $showImage    = $this->getShowImage();
 $height       = $this->getImageHeight();
