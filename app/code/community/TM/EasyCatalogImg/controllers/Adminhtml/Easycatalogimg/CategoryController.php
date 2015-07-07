@@ -31,10 +31,35 @@ class TM_EasyCatalogImg_Adminhtml_Easycatalogimg_CategoryController extends Mage
             ->setPageSize($pageSize)
             ->setCurPage(1);
 
+        $storeGroups = Mage::app()->getGroups(true);
+        $searchInChildCategoriesFlag = $this->getRequest()->getParam('search_in_child_categories');
         $helper = Mage::helper('catalog/image');
         foreach ($categories as $category) {
-            $products = $category->getProductCollection()
-                ->addAttributeToSelect('image')
+            $storeGroup = false;
+
+            if ($searchInChildCategoriesFlag) {
+                $category->load($category->getId());
+                $pathIds = $category->getPathIds();
+                if (count($pathIds) > 1) {
+                    foreach ($storeGroups as $group) {
+                        if ($group->getRootCategoryId() != $pathIds[1]) { // 0 element - is global root
+                            continue;
+                        }
+                        $storeGroup = $group;
+                        break;
+                    }
+                }
+            }
+
+            if ($storeGroup) {
+                $products = Mage::getResourceModel('catalog/product_collection')
+                    ->setStoreId($storeGroup->getDefaultStoreId())
+                    ->addCategoryFilter($category);
+            } else {
+                $products = $category->getProductCollection();
+            }
+
+            $products->addAttributeToSelect('image')
                 ->addAttributeToFilter('image', array('notnull' => 1))
                 ->addAttributeToFilter('image', array('neq' => ''))
                 ->addAttributeToFilter('image', array('neq' => 'no_selection'))

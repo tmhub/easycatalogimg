@@ -13,6 +13,7 @@ class TM_EasyCatalogImg_Block_Adminhtml_System_Config_Form_Fieldset_AutomatedIma
         {$this->__("You can fill empty category thumbnails with image of first product of corresponding category. <br/>If category has attached thumbnail already, it will be skipped.")}
         <ul>
             <li><input style="margin: 0 3px 0 0;" type="checkbox" id="easycatalogimg_thumbnail"/><label for="easycatalogimg_thumbnail">{$this->__("Fill category thumbnails")}</label></li>
+            <li><input style="margin: 0 3px 0 0;" type="checkbox" id="easycatalogimg_search_in_child_categories"/><label for="easycatalogimg_search_in_child_categories">{$this->__("Search in child categories")}</label></li>
         </ul>
         <button onclick="assignCategoryImages(0, 0);" class="scalable save" type="button"><span><span><span>{$this->__("Run")}</span></span></span></button>
         <script type="text/javascript">
@@ -30,7 +31,8 @@ class TM_EasyCatalogImg_Block_Adminhtml_System_Config_Form_Fieldset_AutomatedIma
                     parameters: {
                         last_processed: last_processed,
                         processed: processed,
-                        thumbnail: $('easycatalogimg_thumbnail').checked ? 1 : 0
+                        thumbnail: $('easycatalogimg_thumbnail').checked ? 1 : 0,
+                        search_in_child_categories: $('easycatalogimg_search_in_child_categories').checked ? 1 : 0
                     },
                     onSuccess: function(response) {
                         var response = response.responseText;
@@ -51,7 +53,7 @@ class TM_EasyCatalogImg_Block_Adminhtml_System_Config_Form_Fieldset_AutomatedIma
                             $('loading_mask_processed').update(response.processed);
                         } else {
                             $('loading_mask_processed').remove();
-                            var message = '{$this->__("Completed. {count} items was processed")}';
+                            var message = '{$this->__("Completed. {count} items was processed. Please reindex catalog_category_flat data.")}';
                             alert(message.replace('{count}', response.processed));
                         }
                     },

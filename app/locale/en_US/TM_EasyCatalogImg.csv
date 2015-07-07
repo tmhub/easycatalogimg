@@ -23,4 +23,5 @@
 "You can fill empty category thumbnails with image of first product of corresponding category. <br/>If category has attached thumbnail already, it will be skipped.","You can fill empty category thumbnails with image of first product of corresponding category. <br/>If category has attached thumbnail already, it will be skipped."
 "Fill category thumbnails","Fill category thumbnails"
 "Please select the checkbox above","Please select the checkbox above"
-"Completed. {count} items was processed","Completed. {count} items was processed"
+"Completed. {count} items was processed. Please reindex catalog_category_flat data.","Completed. {count} items was processed. Please reindex catalog_category_flat data."
+"Search in child categories","Search in child categories"
