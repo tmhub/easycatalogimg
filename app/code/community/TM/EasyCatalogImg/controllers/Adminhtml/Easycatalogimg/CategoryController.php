@@ -38,7 +38,7 @@ class TM_EasyCatalogImg_Adminhtml_Easycatalogimg_CategoryController extends Mage
                 ->addAttributeToFilter('image', array('notnull' => 1))
                 ->addAttributeToFilter('image', array('neq' => ''))
                 ->addAttributeToFilter('image', array('neq' => 'no_selection'))
-                ->setOrder('entity_id')
+                ->setOrder('entity_id', 'asc')
                 ->setPage(1, 1);
 
             $product = $products->getFirstItem();
