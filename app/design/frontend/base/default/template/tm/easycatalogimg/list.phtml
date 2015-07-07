@@ -49,8 +49,7 @@ $i = 0;
                 <?php else: ?>
                     <img src="<?php echo $imager->resize($imageUrl, $width, $height) ?>"
                         srcset="<?php echo $imager->resize($imageUrl, $width, $height) ?> 1x, <?php echo $imager->resize($imageUrl, $width * 2, $height * 2) ?> 2x"
-                        width="<?php echo $width ?>"
-                        height="<?php echo $height ?>"
+                        style="width: <?php echo $width ?>px; height: <?php echo $height ?>px;"
                         alt="<?php echo $this->htmlEscape($_category->getName()) ?>"
                     />
                 <?php endif; ?>
