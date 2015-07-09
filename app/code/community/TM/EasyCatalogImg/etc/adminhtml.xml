@@ -15,6 +15,20 @@
                             </config>
                         </children>
                     </system>
+                    <templates_master>
+                        <children>
+                            <easycatalogimg module="easycatalogimg">
+                                <title>Easy Catalog Images</title>
+                                <sort_order>520</sort_order>
+                                <children>
+                                    <assignimage>
+                                        <title>Automated Image Assignment</title>
+                                        <sort_order>10</sort_order>
+                                    </assignimage>
+                                </children>
+                            </easycatalogimg>
+                        </children>
+                    </templates_master>
                 </children>
             </admin>
         </resources>

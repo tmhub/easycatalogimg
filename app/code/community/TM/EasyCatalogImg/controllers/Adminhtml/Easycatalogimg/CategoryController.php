@@ -99,4 +99,15 @@ class TM_EasyCatalogImg_Adminhtml_Easycatalogimg_CategoryController extends Mage
             'last_processed' => $categories->getLastItem()->getId()
         )));
     }
+
+    protected function _isAllowed()
+    {
+        $action = strtolower($this->getRequest()->getActionName());
+        switch ($action) {
+            case 'assignimage':
+                return Mage::getSingleton('admin/session')->isAllowed('templates_master/easycatalogimg/' . $action);
+            default:
+                return Mage::getSingleton('admin/session')->isAllowed('templates_master/easycatalogimg');
+        }
+    }
 }
