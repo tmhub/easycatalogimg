@@ -95,6 +95,11 @@
     </adminhtml>
 
     <default>
+        <subscriptionchecker>
+            <ignored_sections>
+                <easycatalogimg/>
+            </ignored_sections>
+        </subscriptionchecker>
         <easycatalogimg>
             <general>
                 <enabled>0</enabled>
