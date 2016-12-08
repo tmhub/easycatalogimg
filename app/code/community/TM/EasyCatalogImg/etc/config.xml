@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
+
     <modules>
         <TM_EasyCatalogImg>
             <version>2.3.4.3</version>
@@ -121,4 +122,5 @@
             </category>
         </easycatalogimg>
     </default>
+
 </config>
