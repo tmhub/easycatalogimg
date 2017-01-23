@@ -21,13 +21,10 @@ $i = 0;
 ?>
 
 <div class="easycatalogimg">
+<ul class="easycatalog-grid easycatalogimg-cols-<?php echo $columnsCount ?>">
 <?php foreach ($_categories as $_category) : ?>
 
     <?php if ($i >= $maxCategoryCount): break; endif; ?>
-
-    <?php if($i++%$columnsCount==0): ?>
-    <ul class="easycatalog-grid easycatalogimg-cols-<?php echo $columnsCount ?>">
-    <?php endif; ?>
 
     <li class="item">
         <h5 class="category-name parent-category"><a href="<?php echo $_category->getUrl() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>"><?php echo $this->htmlEscape($_category->getName()) ?></a></h5>
@@ -87,11 +84,8 @@ $i = 0;
         endif; ?>
     </li>
 
-    <?php if($i%$columnsCount==0 || $i==$_collectionSize): ?>
-    </ul>
-    <?php endif; ?>
-
 <?php endforeach; ?>
+</ul>
 </div>
 
 <script type="text/javascript">decorateGeneric($$('ul.easycatalog-grid'), ['odd','even','first','last'])</script>

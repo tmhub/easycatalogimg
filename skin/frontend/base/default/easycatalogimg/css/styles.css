@@ -6,10 +6,15 @@
 .easycatalog-grid .product-image { width: auto; height: auto; text-align: center; }
 .easycatalog-grid img { width: auto; max-width: 100%; height: auto; }
 .easycatalogimg-cols-2 li.item { width: 50% !important; }
+.easycatalogimg-cols-2 li.item.item:nth-of-type(2n+1) { clear: left; }
 .easycatalogimg-cols-3 li.item { width: 33.3% !important; }
+.easycatalogimg-cols-3 li.item:nth-of-type(3n+1) { clear: left; }
 .easycatalogimg-cols-4 li.item { width: 25% !important; }
+.easycatalogimg-cols-4 li.item:nth-of-type(4n+1) { clear: left; }
 .easycatalogimg-cols-5 li.item { width: 20% !important; }
+.easycatalogimg-cols-5 li.item:nth-of-type(5n+1) { clear: left; }
 .easycatalogimg-cols-6 li.item { width: 16.6% !important; }
+.easycatalogimg-cols-6 li.item:nth-of-type(6n+1) { clear: left; }
 
 .easycatalogimg .parent-category { margin: 0 0 8px; }
 .easycatalogimg .parent-category a { font-size: 17px; font-weight: normal; text-decoration: none; color: #000; }
@@ -31,30 +36,34 @@
 .easycatalogimg:after,
 .easycatalog-grid:after { content: '.'; clear: both; visibility: hidden; display: block; height: 0; font-size: 0; }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .easycatalogimg .parent-category a { font-size: 18px; }
     .easycatalogimg .list-subcategories li { line-height: 18px; }
     .easycatalogimg .list-subcategories a { font-size: 15px; }
 
     /* Three columns instead of six */
-    .easycatalogimg-cols-6 li.item { width: 33.3% !important; }
-    .easycatalogimg-cols-6 li.item:nth-of-type(4n) { clear: left; }
+    .easycatalogimg-cols-6 li.item,
+    .easycatalogimg-cols-5 li.item { width: 33.3% !important; }
+
+    .easycatalogimg-cols-5 li.item:nth-of-type(5n+1),
+    .easycatalogimg-cols-6 li.item:nth-of-type(6n+1) { clear: none; }
+
+    .easycatalogimg-cols-5 li.item:nth-of-type(3n+1),
+    .easycatalogimg-cols-6 li.item:nth-of-type(3n+1) { clear: left; }
 }
 
 @media (max-width: 480px) {
-    .easycatalogimg-cols-6 li.item:nth-of-type(4n) { clear: none; }
+    .easycatalogimg-cols-5 li.item:nth-of-type(3n+1),
+    .easycatalogimg-cols-6 li.item:nth-of-type(3n+1) { clear: none; }
     /* Two columns for small screen */
     .easycatalog-grid li.item { width: 50% !important; }
+
+    .easycatalogimg-cols-3 li.item:nth-of-type(3n+1),
+    .easycatalogimg-cols-4 li.item:nth-of-type(4n+1),
+    .easycatalogimg-cols-5 li.item:nth-of-type(5n+1) { clear: none; }
+
     /* clear: left for every third li */
-    .easycatalogimg-cols-2 li.item:nth-of-type(2n+1),
     .easycatalogimg-cols-4 li.item:nth-of-type(2n+1),
-    .easycatalogimg-cols-6 li.item:nth-of-type(2n+1),
-    /* clear: left for every third li inside every third .easycatalog-grid */
-    .easycatalogimg-cols-3:nth-of-type(2n+1) li.item:nth-of-type(2n+1),
-    .easycatalogimg-cols-5:nth-of-type(2n+1) li.item:nth-of-type(2n+1),
-    /* clear: left for every second li inside every second .easycatalog-grid */
-    .easycatalogimg-cols-3:nth-of-type(2n) li.item:nth-of-type(2n),
-    .easycatalogimg-cols-5:nth-of-type(2n) li.item:nth-of-type(2n) { clear: left; }
-    .easycatalogimg-cols-3:after,
-    .easycatalogimg-cols-5:after { content: ''; clear: none; }
+    .easycatalogimg-cols-5 li.item:nth-of-type(2n+1),
+    .easycatalogimg-cols-6 li.item:nth-of-type(2n+1) { clear: left; }
 }
