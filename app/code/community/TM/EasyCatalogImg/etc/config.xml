@@ -64,6 +64,25 @@
         </routers>
     </admin>
 
+    <tmamp>
+        <whitelist>
+            <block_types>
+                <easycatalogimg>
+                    <list>easycatalogimg/list</list>
+                    <widget_list>easycatalogimg/widget_list</widget_list>
+                </easycatalogimg>
+            </block_types>
+        </whitelist>
+        <scss>
+            <blocks>
+                <TM_EasyCatalogImg_Block_List>
+                    <listing>components/listing</listing>
+                    <easycatalogimages>easycatalogimg/css/tmamp</easycatalogimages>
+                </TM_EasyCatalogImg_Block_List>
+            </blocks>
+        </scss>
+    </tmamp>
+
    <adminhtml>
         <acl>
             <resources>

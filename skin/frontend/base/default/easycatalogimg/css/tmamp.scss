@@ -1,0 +1,7 @@
+.easycatalog-grid {
+    @extend %listing;
+
+    > li {
+        @extend %listing-item;
+    }
+}
