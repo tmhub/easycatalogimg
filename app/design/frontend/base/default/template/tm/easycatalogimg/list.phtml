@@ -11,7 +11,7 @@ if ($background = $this->getBackgroundColor()) :
     $imager->setBackgroundColor($background);
 endif;
 
-$columnsCount = $this->getColumnCount();
+$columnsCount = $this->getColumnCount() ? $this->getColumnCount() : 2;
 $showImage    = $this->getShowImage();
 $height       = $this->getImageHeight();
 $width        = $this->getImageWidth();
