@@ -4,7 +4,7 @@
         <reference name="head">
             <action method="addItem" ifconfig="easycatalogimg/general/enabled">
                 <type>skin_css</type>
-                <name>css/tm/easycatalogimg.css</name>
+                <name>easycatalogimg/css/styles.css</name>
             </action>
         </reference>
     </default>
