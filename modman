@@ -9,4 +9,4 @@ app/locale/it_IT/TM_EasyCatalogImg.csv                          app/locale/it_IT
 app/locale/nl_NL/TM_EasyCatalogImg.csv                          app/locale/nl_NL/TM_EasyCatalogImg.csv
 app/locale/pt_PT/TM_EasyCatalogImg.csv                          app/locale/pt_PT/TM_EasyCatalogImg.csv
 media/tm/easycatalogimg/no_image.gif                            media/tm/easycatalogimg/no_image.gif
-skin/frontend/base/default/easycatalogimg                       skin/frontend/base/default/easycatalogimg
+skin/frontend/base/default/tm/easycatalogimg                    skin/frontend/base/default/tm/easycatalogimg

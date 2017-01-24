@@ -77,13 +77,13 @@
             <blocks>
                 <TM_EasyCatalogImg_Block_List>
                     <listing>components/listing</listing>
-                    <easycatalogimages>easycatalogimg/css/tmamp</easycatalogimages>
+                    <easycatalogimages>tm/easycatalogimg/css/tmamp</easycatalogimages>
                 </TM_EasyCatalogImg_Block_List>
             </blocks>
         </scss>
     </tmamp>
 
-   <adminhtml>
+    <adminhtml>
         <acl>
             <resources>
                 <admin>
