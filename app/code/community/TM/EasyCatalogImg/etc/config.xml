@@ -76,7 +76,6 @@
         <scss>
             <blocks>
                 <TM_EasyCatalogImg_Block_List>
-                    <listing>components/listing</listing>
                     <easycatalogimages>tm/easycatalogimg/css/tmamp</easycatalogimages>
                 </TM_EasyCatalogImg_Block_List>
             </blocks>
