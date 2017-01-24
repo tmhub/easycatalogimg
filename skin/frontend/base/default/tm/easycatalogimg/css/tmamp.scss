@@ -10,8 +10,10 @@ $easycatalogimg-item-title-background: rgba(255,255,255,0.9) !default;
 
     > li {
         @extend %listing-item;
+
         position: relative;
         border: $easycatalogimg-item-border;
+        padding: 0;
 
         > .category-name {
             @extend %listing-item-title;
@@ -21,6 +23,26 @@ $easycatalogimg-item-title-background: rgba(255,255,255,0.9) !default;
             left: $easycatalogimg-item-title-left;
             padding: $easycatalogimg-item-title-padding;
             background: rgba(255,255,255,0.9);
+        }
+    }
+
+    .list-subcategories {
+        z-index: 1;
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+
+        > li {
+            @extend %chips;
+
+            text-shadow: none;
+            background: rgba(255,255,255,0.8);
+            font-size: .8em;
+            line-height: 1;
+            a {
+                white-space: nowrap;
+                color: $dark-grey;
+            }
         }
     }
 }
