@@ -24,7 +24,7 @@ $i = 0;
 <ul class="easycatalog-grid easycatalogimg-cols-<?php echo $columnsCount ?>">
 <?php foreach ($_categories as $_category) : ?>
 
-    <?php if ($i >= $maxCategoryCount): break; endif; ?>
+    <?php if ($i >= $maxCategoryCount): break; endif; $i++; ?>
 
     <li class="item">
         <h5 class="category-name parent-category"><a href="<?php echo $_category->getUrl() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>"><?php echo $this->htmlEscape($_category->getName()) ?></a></h5>
