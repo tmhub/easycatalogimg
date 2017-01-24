@@ -73,13 +73,15 @@
                 </easycatalogimg>
             </block_types>
         </whitelist>
-        <scss>
+        <includes>
             <blocks>
                 <TM_EasyCatalogImg_Block_List>
-                    <easycatalogimages>tm/easycatalogimg/css/tmamp</easycatalogimages>
+                    <styles>
+                        <easycatalogimages>tm/easycatalogimg/css/tmamp</easycatalogimages>
+                    </styles>
                 </TM_EasyCatalogImg_Block_List>
             </blocks>
-        </scss>
+        </includes>
     </tmamp>
 
     <adminhtml>
