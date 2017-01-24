@@ -1,7 +1,26 @@
+$easycatalogimg-item-border: 0 !default;
+
+$easycatalogimg-item-title-top: $listing-item-padding !default;
+$easycatalogimg-item-title-left: $listing-item-padding !default;
+$easycatalogimg-item-title-padding: 4px 10px !default;
+$easycatalogimg-item-title-background: rgba(255,255,255,0.9) !default;
+
 .easycatalog-grid {
     @extend %listing;
 
     > li {
         @extend %listing-item;
+        position: relative;
+        border: $easycatalogimg-item-border;
+
+        > .category-name {
+            @extend %listing-item-title;
+            z-index: 1;
+            position: absolute;
+            top: $easycatalogimg-item-title-top;
+            left: $easycatalogimg-item-title-left;
+            padding: $easycatalogimg-item-title-padding;
+            background: rgba(255,255,255,0.9);
+        }
     }
 }
