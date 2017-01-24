@@ -5,6 +5,9 @@ $easycatalogimg-item-title-left: $listing-item-padding !default;
 $easycatalogimg-item-title-padding: 4px 10px !default;
 $easycatalogimg-item-title-background: rgba(255,255,255,0.9) !default;
 
+$easycatalogimg-item-subcategory-background: rgba(255,255,255,0.8) !default;
+$easycatalogimg-item-subcategory-font-size: 0.8em !default;
+
 .easycatalog-grid {
     @extend %listing;
 
@@ -22,7 +25,7 @@ $easycatalogimg-item-title-background: rgba(255,255,255,0.9) !default;
             top: $easycatalogimg-item-title-top;
             left: $easycatalogimg-item-title-left;
             padding: $easycatalogimg-item-title-padding;
-            background: rgba(255,255,255,0.9);
+            background: $easycatalogimg-item-title-background;
         }
     }
 
@@ -36,12 +39,12 @@ $easycatalogimg-item-title-background: rgba(255,255,255,0.9) !default;
             @extend %chips;
 
             text-shadow: none;
-            background: rgba(255,255,255,0.8);
-            font-size: .8em;
+            background: $easycatalogimg-item-subcategory-background;
+            font-size: $easycatalogimg-item-subcategory-font-size;
             line-height: 1;
             a {
                 white-space: nowrap;
-                color: $dark-grey;
+                color: $listing-item-title-color;
             }
         }
     }
