@@ -44,6 +44,7 @@ $easycatalogimg-item-subcategory-font-size: 0.8em !default;
             font-size: $easycatalogimg-item-subcategory-font-size;
             line-height: 1;
             a {
+                text-decoration: none;
                 white-space: nowrap;
                 color: $listing-item-title-color;
             }
