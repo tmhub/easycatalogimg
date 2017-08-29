@@ -24,7 +24,7 @@ $easycatalogimg-item-subcategory-font-size: 0.8em !default;
             z-index: 1;
             position: absolute;
             top: $easycatalogimg-item-title-top;
-            left: $easycatalogimg-item-title-left;
+            @include left($easycatalogimg-item-title-left);
             padding: $easycatalogimg-item-title-padding;
             background: $easycatalogimg-item-title-background;
         }
@@ -34,7 +34,7 @@ $easycatalogimg-item-subcategory-font-size: 0.8em !default;
         z-index: 1;
         position: absolute;
         bottom: 5px;
-        left: 10px;
+        @include left(10px);
 
         > li {
             @extend %chips;
