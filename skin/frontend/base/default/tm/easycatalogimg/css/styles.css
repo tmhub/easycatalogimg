@@ -66,4 +66,7 @@
     .easycatalogimg-cols-4 li.item:nth-of-type(2n+1),
     .easycatalogimg-cols-5 li.item:nth-of-type(2n+1),
     .easycatalogimg-cols-6 li.item:nth-of-type(2n+1) { clear: left; }
+
+    .easycatalogimg-cols-3:after,
+    .easycatalogimg-cols-5:after { content: ''; clear: none; }
 }
