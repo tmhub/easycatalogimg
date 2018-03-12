@@ -1,6 +1,11 @@
 <config>
     <tmamp>
         <whitelist>
+            <layout_updates>
+                <easycatalogimg>
+                    <xml>tm/easycatalogimg.xml</xml>
+                </easycatalogimg>
+            </layout_updates>
             <block_types>
                 <easycatalogimg>
                     <list>easycatalogimg/list</list>
