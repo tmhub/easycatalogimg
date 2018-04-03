@@ -179,8 +179,16 @@ class TM_EasyCatalogImg_Block_List extends Mage_Core_Block_Template
         $prefix = Mage::getBaseUrl('media') . 'catalog/category/';
         if ($image = $category->getThumbnail()) {
             $url = $prefix . $image;
+            if (Mage::helper('core')->isModuleOutputEnabled('TM_CDN')) {
+                $cdn = Mage::helper('cdn')->getAdapter();
+                if (!empty($cdn)) {
+                    $path = Mage::getBaseDir('media') . '/catalog/category/' . $image;
+                    $url = $cdn->getUrl($path);
+                }
+            }
         } elseif ($this->getUseImageAttribute() && $image = $category->getImage()) {
-            $url = $prefix . $image;
+            // $url = $prefix . $image;
+            $url = $category->getImageUrl();
         } else {
             $url = Mage::getBaseUrl('media') . '/'
                 . Mage::getStoreConfig('easycatalogimg/general/placeholder');
