@@ -50,14 +50,14 @@
                 <source_model>adminhtml/system_config_source_yesno</source_model>
                 <value>1</value>
             </show_image>
-            <name_position translate="label">
+            <name_below_image translate="label">
                 <required>0</required>
                 <visible>1</visible>
                 <label>Place names below images</label>
                 <type>select</type>
                 <source_model>adminhtml/system_config_source_yesno</source_model>
                 <value>0</value>
-            </name_position>
+            </name_below_image>
             <image_width translate="label">
                 <required>0</required>
                 <visible>1</visible>
