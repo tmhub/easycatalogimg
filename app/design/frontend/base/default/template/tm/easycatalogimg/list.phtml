@@ -17,6 +17,7 @@ $height       = $this->getImageHeight();
 $width        = $this->getImageWidth();
 $maxCategoryCount    = $this->getCategoryCount();
 $maxSubcategoryCount = $this->getSubcategoryCount();
+$placeNamesBelowImages = $this->getNamePosition();
 $i = 0;
 ?>
 
@@ -27,6 +28,9 @@ $i = 0;
     <?php if ($i >= $maxCategoryCount): break; endif; $i++; ?>
 
     <li class="item">
+        <?php if (!$placeNamesBelowImages): ?>
+        <h5 class="category-name parent-category"><a href="<?php echo $_category->getUrl() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>"><?php echo $this->htmlEscape($_category->getName()) ?></a></h5>
+        <?php endif; ?>
         <?php if ($showImage) : ?>
             <a href="<?php echo $_category->getUrl() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>" class="product-image">
                 <?php $imageUrl = $this->getImage($_category) ?>
@@ -52,7 +56,9 @@ $i = 0;
                 <?php endif; ?>
             </a>
         <?php endif; ?>
+        <?php if ($placeNamesBelowImages): ?>
         <h5 class="category-name parent-category"><a href="<?php echo $_category->getUrl() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>"><?php echo $this->htmlEscape($_category->getName()) ?></a></h5>
+        <?php endif; ?>
         <?php
         if ($maxSubcategoryCount) :
             $j = 0;
