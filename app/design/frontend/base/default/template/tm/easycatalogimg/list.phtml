@@ -60,10 +60,10 @@ $i = 0;
             <h5 class="category-name parent-category"><a href="<?php echo $_category->getUrl() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>"><?php echo $this->htmlEscape($_category->getName()) ?></a></h5>
         <?php endif; ?>
         <?php
-        if ($maxSubcategoryCount) :
+        $_subcategories = $_category->getSubcategories();
+        if ($maxSubcategoryCount && $_subcategories) :
             $j = 0;
-            $_subcategories = $_category->getSubcategories();
-            $_count         = count($_subcategories);
+            $_count = count($_subcategories);
             // display More link, if more than one subcategory is not shown, otherwise - display last category
             $_displayMoreLink = $_count > $maxSubcategoryCount + 1;
             if ($_count) : ?>
